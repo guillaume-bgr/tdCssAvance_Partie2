@@ -3,3 +3,17 @@
         @content;
     }
 }
+
+@mixin elemColors($colors) {
+    @each $key,$value in $colors{
+        $text-color: contrast-color($value);
+        &-#{$key} {
+            background-color: $value;
+            color: $text-color;
+        }
+    }
+}
+
+@function contrast-color($color) {
+    @return if(lightness($color) <55%, white, black)
+}

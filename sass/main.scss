@@ -2,52 +2,26 @@
 @import './base';
 @import './functions';
 @import './components/nav';
+@import './components/buttons';
+@import './layout';
 
-@mixin FullWFlex {
+body {
     display: flex;
-    width: 100%;
+    flex-direction: column;
 }
 
-.container {
-    @include FullWFlex;
+.text {
+    @include elemColors($colors);
 }
 
-.text-red {
-    color: $red
+.bg {
+    @include elemColors($colors);
 }
 
-.red {
-    background-color: $red;
-}
-
-.text-blue {
-    color: $blue;
-}
-
-.blue {
-    background-color: $blue;
-}
-
-.text-green {
-    color: $green;
-}
-
-.green {
-    background-color: $green;
-}
-
-.text-grey {
-    color: $grey;
-}
-
-.grey {
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $grey;
-}
-
-.text-white {
-    color: $white;
-}
-
-.white {
-    background-color: $white;
+    flex-grow: 1;
 }
